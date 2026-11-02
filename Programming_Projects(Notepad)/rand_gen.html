@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Random Number Generator</title>
+		<style>body{text-align: center; font-family: comic sans ms;}</style>
+	</head>
+	<body>
+		<script>
+			// create home div
+		var homeDiv = document.createElement("div");
+		homeDiv.id = "homeDiv";
+		document.body.appendChild(homeDiv);
+			// create and append h1 to "click to generate random number between 1 and 100"
+		var h1 = document.createElement("h1");
+		h1.innerHTML = "Click to generate a random number between 1 and 100";
+		document.body.appendChild(h1);
+			// create and append p
+		var p = document.createElement("p");
+		p.id = "p";
+		p.innerHTML = "0";
+		document.body.appendChild(p);
+			// create and append button
+		var button = document.createElement("button");
+		button.id="button";
+		button.innerHTML = "click";
+		document.body.appendChild(button);
+			// button onclick
+		button.onclick = function(){
+			var p = document.getElementById("p");
+			p.innerHTML = Math.floor(Math.random() * 100);
+		};
+		</script>
+	</body>
+</html>

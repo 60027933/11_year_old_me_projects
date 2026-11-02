@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Ten Dice Roll</title>
+</head>
+<body>	
+	<img src="../spinface.jpg" alt="Joseph's favourite picture" />
+	Dice Number:<br/> <textarea id="diceNum"></textarea><br/>
+	nudges: <span id="nudges">0</span><br/>
+	top pair: <span id="pair">0</span><br/>
+	<button onclick="rollDice();">Roll!</button>
+	<script>
+	function rollDice(){
+	var getDice = document.getElementById("diceNum");
+	var diceAmount = getDice.value;
+	var dienum = 0;
+	var nudges = 0;
+	var fivePair = 0;
+	var fourPair = 0;
+	var threePair = 0;
+	var twoPair = 0;
+	var onePair  = 0;
+	var topPair = 0;
+	while(diceAmount > 0){
+	Math.floor(Math.random((dienum)*5)+1)
+	if(dienum = 6){
+	nudges++;
+	};
+	if(dienum = 5){
+	fivePair++;
+	};
+	if(dienum = 4){
+	fourPair++;
+	};
+	if(dienum = 3){
+	threePair++;
+	};
+	if(dienum = 2){
+	twoPair++;
+	};
+	if(dienum = 1){
+	onePair++;
+	};
+	if(onePair >= 2){
+	topPair = 1;
+	};
+	if(twoPair >= 2){
+	topPair = 2;
+	};
+	if(threePair >= 2){
+	topPair = 3;
+	};
+	if(fourPair >= 2){
+	topPair = 4;
+	};
+	if(fivePair >= 2){
+	topPair = 5;
+	};
+	diceAmount--;
+	};
+	document.getElementById("nudges").innerText = nudges;
+	document.getElementById("pair").innerText = topPair;
+	};
+	</script>
+</body>
+</html>

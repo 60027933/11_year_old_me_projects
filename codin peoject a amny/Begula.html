@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional/EN"
+"file:///C:/Users/User1/Downloads/Coding_folder/belugaGame.html"
+<html lang="en";>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+                <title>New Game.html</title>
+                <style content="text/css">
+                        img{
+
+                        }
+                        #head{
+                                font-size: 50px;
+                        }
+                </style>
+
+        </head>
+        <body>
+        <p id="head">Communism, this is.<br/>-Yoda</p>
+        <img id="beluga" src="beluga.png"></img><br/>amount of FORG:
+<span id="my-span(seconds)"> ,</span>
+        <canvas id="my-canvas" width="0" height="0"></canvas><br/>
+        <script content="text/js">
+		var image= "forg.jpg";
+                var belugasOnScreen = 0;
+                var getSpan = document.getElementById("my-span(seconds)");
+                var TS = 0;
+                var X = 100;
+                var c = document.getElementById("my-canvas");
+                var ctx = c.getContext("2d");
+                var beluga_character = document.getElementById("beluga");
+                function timeSpentInSeconds() {
+                        TS = TS + 1;
+                        getSpan.innerHTML = TS;
+                        setTimeout(timeSpentInSeconds, 50);
+                        belugasOnScreen++;
+                }
+                timeSpentInSeconds();
+                function drawCat(){     
+                                //Create Canvas
+                        var canvas = document.createElement("canvas");
+                        canvas.width = X;
+                        canvas.height = X / 1.75;
+                                //get context
+                        var ctx = canvas.getContext("2d");
+                        ctx.fillStyle = "black";
+                        ctx.fillRect(0,0, canvas.width, canvas.height);
+                                // load image
+                        var img = new Image();
+                        img.src = image;
+                        img.onload = function() {
+                        ctx.drawImage(
+                                img,
+                                0,
+                                0,
+                                canvas.width,
+                                canvas.height
+                        );
+                        }; 
+                                // add canvas
+                        canvas.id = "myCanvas";
+                        document.body.appendChild(canvas);
+                        setTimeout(drawCat, 50);
+                };
+                drawCat();
+                function ifStatement() {
+                        if(belugasOnScreen == 500){
+                                X = X + 50;
+				image="forg3.jpg";
+                                alert("New Beluga type discovered! " + belugasOnScreen);
+                        }
+                        if(belugasOnScreen == 1000){
+                                X = X + 50;
+				image="beluga.png";
+                                alert("New Beluga type discovered! " + belugasOnScreen);
+                        }
+                        if(belugasOnScreen == 100){
+                                X = X + 50;
+				image="forg2.jpg";
+                                alert("New Beluga type discovered! " + belugasOnScreen);
+                        }
+                        setTimeout(ifStatement, 50);
+                }
+                ifStatement();
+                                //Create Canvas #2 (for dawg)
+                        var cc = document.createElement("canvas");
+                        cc.width = X;
+                        cc.height = X / 1.75;
+                                // Get Context #2 (for dawg)
+                        var ct
+        </script>
+        </body>
+</html>
